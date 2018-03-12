@@ -16,11 +16,9 @@
 # along with Paramiko; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-"""
-...
-"""
+import socket
+import threading
 
-import threading, socket
 from paramiko.common import asbytes
 
 
@@ -37,9 +35,11 @@ class LoopSocket (object):
         self.__cv = threading.Condition(self.__lock)
         self.__timeout = None
         self.__mate = None
+        self._closed = False
 
     def close(self):
         self.__unlink()
+        self._closed = True
         try:
             self.__lock.acquire()
             self.__in_buffer = bytes()
