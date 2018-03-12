@@ -19,12 +19,8 @@ via `pip <http://pip-installer.org>`_::
 
     $ pip install paramiko
 
-.. note::
-    Users who want the bleeding edge can install the development version via
-    ``pip install paramiko==dev``.
-
-We currently support **Python 2.6, 2.7, 3.3+, and PyPy**. Users on Python 2.5
-or older (or 3.2 or older) are urged to upgrade.
+We currently support **Python 2.7, 3.4+, and PyPy**. Users on Python 2.6 or
+older (or 3.3 or older) are urged to upgrade.
 
 Paramiko has only one direct hard dependency: the Cryptography library. See
 :ref:`cryptography`.
@@ -114,9 +110,3 @@ due to their infrequent utility & non-platform-agnostic requirements):
     delegation, make sure that the target host is trusted for delegation in the
     active directory configuration. For details see:
     http://technet.microsoft.com/en-us/library/cc738491%28v=ws.10%29.aspx
-
-
-.. toctree::
-    :hidden:
-
-    installing-1.x
